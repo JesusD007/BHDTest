@@ -1,5 +1,6 @@
 using BHDTest.DTOs;
 using BHDTest.Models;
+using BHDTest.Repositories;
 using BHDTest.Services;
 using BHDTest.Validators;
 using FluentValidation;
@@ -42,6 +43,10 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer(opt =>
 
 //Services Dependency  injection 
 builder.Services.AddScoped<IUserService, UserService>();
+
+//Repositories Dependency Injection
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPhoneRepository, PhoneRepository>();
 
 var app = builder.Build();
 

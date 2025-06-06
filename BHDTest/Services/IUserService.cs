@@ -4,8 +4,10 @@ namespace BHDTest.Services
 {
     public interface IUserService
     {
-        string GetToken(string user, string pass);
-        
+        string GetToken(string user);
+        Task<(bool, UserCreateResponseDto)> Add(UserCreateRequestDto user);
+        Task<IEnumerable<UserDto>> GetAll();
+
 
     }
 }
