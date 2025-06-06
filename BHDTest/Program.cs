@@ -1,4 +1,7 @@
+using BHDTest.DTOs;
 using BHDTest.Models;
+using BHDTest.Validators;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +17,10 @@ builder.Services.AddDbContext<BHDPruebaContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("BHDTestConnection"));
 });
+
+// Validators
+builder.Services.AddTransient<IValidator<UserCreateRequestDto>, UserCreateRequestValidator>();
+
 
 var app = builder.Build();
 

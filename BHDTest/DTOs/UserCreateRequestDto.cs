@@ -2,11 +2,11 @@
 
 namespace BHDTest.DTOs
 {
-    public class UserRequestDto
+    public class UserCreateRequestDto
     {
-            public string? Nombre { get; set; }
-            public string? Email { get; set; }
-            public string? Password { get; set; }
-            public List<PhoneRequestDto>? Phones { get; set; }
+        public string? Nombre { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public List<PhoneRequestDto>? Phones { get; set; }
     }
 }

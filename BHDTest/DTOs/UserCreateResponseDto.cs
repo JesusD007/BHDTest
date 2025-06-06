@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BHDTest.DTOs
 {
-    public class UserResponseDto
+    public class UserCreateResponseDto
     {
         public Guid Id { get; set; }
 
