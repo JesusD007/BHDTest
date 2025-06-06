@@ -13,7 +13,7 @@ This is a **RESTful API** designed with a **layered architecture** and **depende
 
 ### Database Setup
 
-Once the required Entity Framework dependencies are installed, use the following commands in the **NuGet Package Manager Console** to set up the database:
+Once the required Entity Framework dependencies are installed, use the following commands in the **NuGet Package Manager Console** to set up the database direcly from code :
 
 ```bash
 Add-Migration InitDB
@@ -63,13 +63,13 @@ The `appsettings.json` file contains configuration settings. **Sensitive values*
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "BHDTestConnection": "Your SQL Server connection string here"
+    "BHDTestConnection": "Your SQL Server connection string here" example  "Server= (server name); Database= (data base name); Trusted_Connection=True; Trust Server Certificate=True"
   },
   "PasswordRules": {
-    "Regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$"
+    "Regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$" --> Configurable password rules
   },
   "Jwt": {
-    "Key": "Secret-key-here"
+    "Key": "Secret-key-here" --> configurable JWT key (should be at least 32 char)
   }
 }
 ```
@@ -84,6 +84,10 @@ The `appsettings.json` file contains configuration settings. **Sensitive values*
 | POST   | `/api/User`       | Creates a new user with associated phone numbers |
 | GET    | `/api/User/token` | Retrieves a test JWT token (static mode)         |
 
+---
+### Swagger UI
+
+![Swagger](https://github.com/JesusD007/BHDTest/blob/62c5d14d6dc0cde3f085fd145682d9504bca3929/Doc/Swagger.jpg?raw=true)
 ---
 ## Post (Create User)
 ### Request Example
