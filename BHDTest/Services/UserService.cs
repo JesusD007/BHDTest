@@ -36,7 +36,6 @@ namespace BHDTest.Services
                 newUser.Name = user.Nombre!;
                 newUser.Email = user.Email!;
                 newUser.Password = user.Password!;
-                newUser.Token = GetToken(user.Email!);
 
                 if (user.Phones != null && user.Phones.Any())
                 {
@@ -56,7 +55,7 @@ namespace BHDTest.Services
                     Modified = newUser.Modified,
                     LastLogin = newUser.LastLogin,
                     IsActive = newUser.IsActive,
-                    Token = GetToken(newUser.Token)
+                    Token = GetToken(user.Email!)
                 };
                 var existingUser = await _userRepository.GetByEmail(user.Email!);
                 if (existingUser != null)

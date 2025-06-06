@@ -37,9 +37,6 @@ namespace BHDTest.Models
         public DateTime LastLogin { get; set; }
 
         [Required]
-        public string Token { get; set; } = string.Empty;
-
-        [Required]
         public bool IsActive { get; set; } = true;
 
         public ICollection<Phone> Phones { get; set; } = new List<Phone>();

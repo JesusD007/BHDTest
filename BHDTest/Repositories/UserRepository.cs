@@ -29,7 +29,6 @@ namespace BHDTest.Repositories
                 Created = b.Created,
                 Modified = b.Modified,
                 LastLogin = b.LastLogin,
-                Token = b.Token,
                 IsActive = b.IsActive,
                 Phones = b.Phones
             }).ToListAsync();
