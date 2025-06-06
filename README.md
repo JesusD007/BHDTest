@@ -69,7 +69,7 @@ The `appsettings.json` file contains configuration settings. **Sensitive values*
     "Regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$"
   },
   "Jwt": {
-    "Key": "Your-very-secret-and-secure-key-here"
+    "Key": "Secret-key-here"
   }
 }
 ```
@@ -85,7 +85,17 @@ The `appsettings.json` file contains configuration settings. **Sensitive values*
 | GET    | `/api/User/token` | Retrieves a test JWT token (static mode)         |
 
 ---
+## Post (Create User)
+### Request Example
 
+![Request](https://github.com/JesusD007/BHDTest/blob/85bf96f37894d540fdf612d727814eb28ea1aa48/Doc/Request.jpg?raw=true)
+
+---
+
+### Response Example
+
+![Response](https://github.com/JesusD007/BHDTest/blob/85bf96f37894d540fdf612d727814eb28ea1aa48/Doc/Response.jpg?raw=true)
+---
 ## Validation Rules
 
 ### Email Regex:
