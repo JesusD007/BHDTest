@@ -12,20 +12,20 @@ namespace BHDTest.Models
 
         [Required]
         [MaxLength(20)]
-        public string Number { get; set; }
+        public string Number { get; set; } = string.Empty;
 
         [Required]
         [MaxLength(10)]
-        public string CityCode { get; set; }
+        public string CityCode { get; set; } = string.Empty;
 
         [Required]
         [MaxLength(10)]
-        public string CountryCode { get; set; }
+        public string CountryCode { get; set; } = string.Empty;
 
         [Required]
         public Guid UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }
