@@ -1,6 +1,7 @@
 # User Management API
 
 This is a **RESTful API** designed with a **layered architecture** and **dependency injection** for secure user creation and retrieval. It follows best practices for clean architecture, modularity, and security.
+### [How to Run Step-by-Step](https://github.com/JesusD007/BHDTest/wiki/How-to-Run-Step-by-Step)
 
 ---
 
