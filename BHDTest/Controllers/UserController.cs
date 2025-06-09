@@ -16,9 +16,12 @@ namespace BHDTest.Controllers
     {
         private readonly IUserService _userService;
 
-        public UserController(IUserService userService)
+        private readonly IValidator<UserCreateRequestDto> _validator;
+
+        public UserController(IUserService userService, IValidator<UserCreateRequestDto> validator)
         {
             _userService = userService;
+            _validator = validator;
         }
 
         /// <summary>
@@ -61,9 +64,9 @@ namespace BHDTest.Controllers
         [ProducesResponseType(typeof(ErrorResponseDto), 400)]
         [ProducesResponseType(typeof(ErrorResponseDto), 409)]
         [ProducesResponseType(typeof(ErrorResponseDto), 500)]
-        public async Task<IActionResult> AddUser([FromBody] UserCreateRequestDto userDto, [FromServices] IValidator<UserCreateRequestDto> validator)
+        public async Task<IActionResult> AddUser([FromBody] UserCreateRequestDto userDto)
         {
-            ValidationResult validationResult = await validator.ValidateAsync(userDto);
+            var validationResult = await _validator.ValidateAsync(userDto);
 
             if (!validationResult.IsValid)
             {
